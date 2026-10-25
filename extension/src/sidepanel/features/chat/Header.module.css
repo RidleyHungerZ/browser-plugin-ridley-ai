@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: var(--rds-header-h);
+  padding: 0 8px;
+  border-bottom: 1px solid var(--rds-border);
+  background: var(--rds-bg);
+  flex: none;
+}
+
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  color: var(--rds-text-2);
+  flex: none;
+  transition: background var(--rds-dur-fast) var(--rds-ease);
+}
+.iconBtn:hover {
+  background: var(--rds-hover);
+  color: var(--rds-text);
+}
+
+.center {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding: 0 4px;
+}
+
+.title {
+  max-width: 100%;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.busy {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: var(--rds-brand);
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: rds-pulse 1.2s var(--rds-ease) infinite;
+}
+
+.subtle {
+  font-size: 10.5px;
+  line-height: 13px;
+  color: var(--rds-text-3);
+}

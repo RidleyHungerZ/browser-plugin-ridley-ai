@@ -1,0 +1,135 @@
+.wrap {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  overflow-anchor: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-height: 100%;
+  padding: 16px var(--rds-gutter) 10px;
+}
+
+.loadMore {
+  min-height: 18px;
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--rds-text-3);
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: var(--rds-radius-sm);
+  background: var(--rds-danger-weak);
+  color: var(--rds-danger);
+  font-size: 12px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: auto;
+  padding: 24px 10px;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--rds-brand-weak);
+  color: var(--rds-brand);
+  margin-bottom: 2px;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 20px;
+  color: var(--rds-text-2);
+}
+
+.emptyModel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border-radius: var(--rds-radius-pill);
+  background: var(--rds-bg-subtle);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  font-size: 11.5px;
+  color: var(--rds-text-2);
+  max-width: 100%;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rds-success);
+  flex: none;
+}
+
+.emptyWarn {
+  margin-top: 4px;
+  font-size: 11.5px;
+  color: var(--rds-warn);
+}
+
+.jump {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 34px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: var(--rds-radius-pill);
+  background: var(--rds-surface-elev);
+  box-shadow: var(--rds-shadow-md);
+  color: var(--rds-text-2);
+  font-size: 12px;
+  animation: rds-pop-in var(--rds-dur) var(--rds-ease);
+  z-index: 5;
+}
+.jump:hover {
+  color: var(--rds-text);
+}
+
+.jumpPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rds-brand);
+  animation: rds-pulse 1.2s var(--rds-ease) infinite;
+}

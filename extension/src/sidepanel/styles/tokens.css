@@ -1,0 +1,112 @@
+/* Ridley Design Tokens
+ * 视觉语言沿用 deepseek-harness：单一品牌蓝、冷灰中性色、大圆角、
+ * 发丝描边 + 极淡柔光，不用重阴影。 */
+
+:root {
+  color-scheme: light;
+
+  /* 品牌 */
+  --rds-brand: rgb(65, 118, 230);
+  --rds-brand-hover: rgb(86, 134, 254);
+  --rds-brand-active: rgb(52, 100, 200);
+  --rds-brand-weak: rgb(237, 243, 254);
+  --rds-brand-weak-hover: rgb(228, 237, 253);
+  --rds-on-brand: #ffffff;
+
+  /* 表面与文字 */
+  --rds-bg: #ffffff;
+  --rds-bg-subtle: rgb(249, 250, 251);
+  --rds-surface: #ffffff;
+  --rds-surface-elev: #ffffff;
+  --rds-text: rgb(15, 17, 21);
+  --rds-text-2: rgb(97, 102, 107);
+  --rds-text-3: rgb(151, 157, 166);
+  --rds-text-inverse: #ffffff;
+  --rds-border: rgba(0, 0, 0, 0.08);
+  --rds-border-strong: rgba(0, 0, 0, 0.14);
+  --rds-hover: rgba(0, 0, 0, 0.045);
+  --rds-active: rgba(0, 0, 0, 0.075);
+  --rds-selected: rgba(65, 118, 230, 0.10);
+
+  /* 语义色 */
+  --rds-bubble: rgb(237, 243, 254);
+  --rds-code-bg: rgb(249, 250, 251);
+  --rds-code-border: rgba(0, 0, 0, 0.06);
+  --rds-danger: rgb(220, 38, 38);
+  --rds-danger-weak: rgb(254, 242, 242);
+  --rds-success: rgb(22, 163, 74);
+  --rds-warn: rgb(217, 119, 6);
+  --rds-warn-weak: rgb(255, 251, 235);
+  --rds-ring: rgba(65, 118, 230, 0.45);
+
+  /* 阴影：发丝描边 + 双层柔光 */
+  --rds-shadow-sm: 0 0 0 0.5px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --rds-shadow-md: 0 0 0 0.5px rgba(0, 0, 0, 0.07), 0 6px 18px rgba(0, 0, 0, 0.08);
+  --rds-shadow-lg: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.14);
+
+  /* 圆角 */
+  --rds-radius-sm: 8px;
+  --rds-radius-md: 12px;
+  --rds-radius-lg: 16px;
+  --rds-radius-xl: 22px;
+  --rds-radius-pill: 999px;
+
+  /* 字体 */
+  --rds-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* 不写裸 monospace：Windows 上中文会回退到宋体 */
+  --rds-font-code: 'SF Mono', 'JetBrains Mono', 'Fira Code', Consolas,
+    'Liberation Mono', Menlo, Courier, 'PingFang SC', 'Microsoft YaHei';
+  --rds-font-size: 14px;
+  --rds-line-height: 24px;
+  --rds-font-size-sm: 13px;
+
+  /* 动效 */
+  --rds-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --rds-dur-fast: 0.1s;
+  --rds-dur: 0.2s;
+  --rds-dur-slow: 0.3s;
+
+  /* 布局 */
+  --rds-header-h: 48px;
+  --rds-gutter: 14px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --rds-brand: rgb(103, 158, 254);
+  --rds-brand-hover: rgb(130, 176, 255);
+  --rds-brand-active: rgb(86, 134, 254);
+  --rds-brand-weak: rgba(65, 118, 230, 0.20);
+  --rds-brand-weak-hover: rgba(65, 118, 230, 0.28);
+  --rds-on-brand: rgb(12, 18, 30);
+
+  --rds-bg: rgb(21, 21, 23);
+  --rds-bg-subtle: rgb(27, 27, 28);
+  --rds-surface: rgb(33, 33, 35);
+  --rds-surface-elev: rgb(38, 38, 41);
+  --rds-text: rgb(235, 238, 242);
+  --rds-text-2: rgb(151, 157, 166);
+  --rds-text-3: rgb(110, 114, 120);
+  --rds-text-inverse: rgb(15, 17, 21);
+  --rds-border: rgba(255, 255, 255, 0.10);
+  --rds-border-strong: rgba(255, 255, 255, 0.17);
+  --rds-hover: rgba(255, 255, 255, 0.06);
+  --rds-active: rgba(255, 255, 255, 0.10);
+  --rds-selected: rgba(103, 158, 254, 0.16);
+
+  --rds-bubble: rgb(44, 44, 46);
+  --rds-code-bg: rgb(27, 27, 28);
+  --rds-code-border: rgba(255, 255, 255, 0.07);
+  --rds-danger: rgb(248, 113, 113);
+  --rds-danger-weak: rgba(220, 38, 38, 0.16);
+  --rds-success: rgb(74, 222, 128);
+  --rds-warn: rgb(251, 191, 36);
+  --rds-warn-weak: rgba(217, 119, 6, 0.16);
+  --rds-ring: rgba(103, 158, 254, 0.55);
+
+  --rds-shadow-sm: 0 0 0 0.5px rgba(255, 255, 255, 0.07), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --rds-shadow-md: 0 0 0 0.5px rgba(255, 255, 255, 0.09), 0 6px 20px rgba(0, 0, 0, 0.5);
+  --rds-shadow-lg: 0 0 0 0.5px rgba(255, 255, 255, 0.10), 0 16px 44px rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,63 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--rds-bg);
+}
+
+.errorBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--rds-danger-weak);
+  color: var(--rds-danger);
+  font-size: 12px;
+  line-height: 18px;
+  border-bottom: 1px solid var(--rds-border);
+  flex: none;
+}
+
+.errorBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.errorBody strong {
+  font-weight: 600;
+}
+
+.errorBody code {
+  font-family: var(--rds-font-code);
+  font-size: 11px;
+  width: fit-content;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+:global([data-theme='dark']) .errorBody code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--rds-text-3);
+  font-size: 12.5px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--rds-border);
+  border-top-color: var(--rds-brand);
+  animation: rds-spin 0.8s linear infinite;
+}

@@ -1,0 +1,335 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.newSession {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  border-radius: var(--rds-radius-md);
+  background: var(--rds-brand);
+  color: var(--rds-on-brand);
+  font-size: 12.5px;
+  font-weight: 500;
+  transition: background var(--rds-dur) var(--rds-ease);
+}
+.newSession:hover {
+  background: var(--rds-brand-hover);
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--rds-radius-md);
+  background: var(--rds-bg-subtle);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  transition: box-shadow var(--rds-dur-fast) var(--rds-ease);
+}
+
+.searchRow:focus-within {
+  box-shadow: inset 0 0 0 1px var(--rds-brand);
+}
+
+.searchIcon {
+  flex: none;
+  color: var(--rds-text-3);
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+}
+.search::placeholder {
+  color: var(--rds-text-3);
+}
+
+.clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: var(--rds-text-3);
+  flex: none;
+}
+.clear:hover {
+  background: var(--rds-hover);
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.pinChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: var(--rds-radius-pill);
+  background: var(--rds-bg-subtle);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  color: var(--rds-text-2);
+  font-size: 11.5px;
+}
+.pinChipOn {
+  background: var(--rds-brand-weak);
+  box-shadow: inset 0 0 0 0.5px var(--rds-brand);
+  color: var(--rds-brand);
+}
+
+.sortRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--rds-text-3);
+  font-size: 11.5px;
+}
+
+.sortLabel {
+  margin-right: 2px;
+}
+
+.orderBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: var(--rds-radius-pill);
+  background: var(--rds-bg-subtle);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  color: var(--rds-text-2);
+  font-size: 11.5px;
+}
+.orderBtn:hover {
+  background: var(--rds-hover);
+  color: var(--rds-text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  position: relative;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--rds-surface);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  cursor: pointer;
+  transition:
+    background var(--rds-dur-fast) var(--rds-ease),
+    box-shadow var(--rds-dur-fast) var(--rds-ease);
+}
+.item:hover {
+  background: var(--rds-bg-subtle);
+}
+.itemActive {
+  box-shadow: inset 0 0 0 1px var(--rds-brand);
+}
+
+.itemTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  padding-right: 72px;
+}
+
+.pinIcon {
+  flex: none;
+  color: var(--rds-brand);
+}
+
+.itemTitle {
+  flex: 1;
+  min-width: 0;
+  font-size: 13.5px;
+  line-height: 19px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.renameInput {
+  flex: 1;
+  min-width: 0;
+  height: 24px;
+  border: none;
+  border-bottom: 1px solid var(--rds-brand);
+  background: transparent;
+  outline: none;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.streamingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+  padding: 1px 7px;
+  border-radius: var(--rds-radius-pill);
+  background: var(--rds-brand-weak);
+  color: var(--rds-brand);
+  font-size: 10.5px;
+  line-height: 15px;
+}
+
+.pulse {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: rds-pulse 1.2s var(--rds-ease) infinite;
+}
+
+.preview {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--rds-text-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px 10px;
+  margin-top: 6px;
+  font-size: 10.5px;
+  line-height: 15px;
+  color: var(--rds-text-3);
+}
+
+.modelTag {
+  max-width: 100%;
+  padding: 1px 7px;
+  border-radius: var(--rds-radius-pill);
+  background: var(--rds-bg-subtle);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta {
+  white-space: nowrap;
+}
+
+.actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--rds-dur-fast) var(--rds-ease);
+}
+.item:hover .actions,
+.item:focus-within .actions {
+  opacity: 1;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  color: var(--rds-text-2);
+}
+.actionBtn:hover {
+  background: var(--rds-hover);
+  color: var(--rds-text);
+}
+
+.confirmDelete {
+  flex: none;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--rds-danger-weak);
+  color: var(--rds-danger);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rds-border);
+  white-space: nowrap;
+}
+
+.confirmText {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10.5px;
+  color: var(--rds-text-3);
+}
+
+.confirmCancel {
+  flex: none;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--rds-bg-subtle);
+  box-shadow: inset 0 0 0 0.5px var(--rds-border);
+  color: var(--rds-text-2);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.confirmCancel:hover {
+  background: var(--rds-hover);
+  color: var(--rds-text);
+}
+
+.empty {
+  padding: 48px 12px;
+  text-align: center;
+  color: var(--rds-text-3);
+  font-size: 12.5px;
+}
+
+@media (hover: none) {
+  .actions {
+    opacity: 1;
+  }
+  .itemTop {
+    padding-right: 96px;
+  }
+}

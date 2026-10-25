@@ -1,0 +1,50 @@
+{
+  "name": "ridley-ai",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Ridley-AI — 个人用浏览器侧边栏 AI 助手",
+  "scripts": {
+    "dev": "vite build --config extension/vite.config.ts --watch --mode development",
+    "build": "vite build --config extension/vite.config.ts",
+    "key": "node tools/gen-key.mjs",
+    "icons": "node tools/gen-icons.mjs",
+    "host:install": "node native-host/scripts/install.mjs",
+    "host:uninstall": "node native-host/scripts/uninstall.mjs",
+    "host:test": "node native-host/scripts/smoke-test.mjs",
+    "host:build": "node native-host/scripts/build-sea.mjs"
+  },
+  "dependencies": {
+    "@joplin/turndown-plugin-gfm": "^1.0.68",
+    "katex": "^0.16.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.3",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "shiki": "^1.24.2",
+    "turndown": "^7.2.4",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/turndown": "^5.0.6",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.24.0",
+    "playwright-core": "^1.64.1",
+    "postject": "^1.0.0-alpha.6",
+    "sharp": "^0.33.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

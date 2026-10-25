@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-size: var(--rds-font-size);
+}
+
+body {
+  font-family: var(--rds-font);
+  font-size: var(--rds-font-size);
+  line-height: var(--rds-line-height);
+  color: var(--rds-text);
+  background: var(--rds-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+a {
+  color: var(--rds-brand);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--rds-selected);
+}
+
+:focus-visible {
+  outline: 2px solid var(--rds-ring);
+  outline-offset: 1px;
+}
+
+/* 文本输入类：焦点反馈统一交给外层容器（卡片/搜索框的 focus-within），
+ * 避免出现与圆角容器不贴合的直角描边或双边框。 */
+:is(input, textarea, select):focus-visible {
+  outline: none;
+}
+
+/* 勾选类仍保留键盘焦点环（浏览器的形状本身是方的，不会与圆角冲突）。 */
+input[type='checkbox']:focus-visible,
+input[type='radio']:focus-visible {
+  outline: 2px solid var(--rds-ring);
+  outline-offset: 2px;
+}
+
+/* 滚动条：WebKit 伪元素与标准属性互斥，避免 hover 失效。 */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--rds-border-strong) transparent;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: var(--rds-border-strong);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rds-text-3);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@keyframes rds-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+@keyframes rds-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+@keyframes rds-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rds-indeterminate {
+  0% {
+    transform: translateX(-100%) scaleX(0.4);
+  }
+  50% {
+    transform: translateX(20%) scaleX(0.7);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0.4);
+  }
+}
+@keyframes rds-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rds-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

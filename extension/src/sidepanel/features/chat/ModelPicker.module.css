@@ -1,0 +1,37 @@
+.picker {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.provider {
+  flex: 0 1 auto;
+  max-width: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--rds-text-3);
+}
+
+.sep {
+  flex: none;
+  color: var(--rds-text-3);
+}
+
+.model {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--rds-text);
+}
+
+.placeholder {
+  color: var(--rds-text-3);
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.ridley-key.json
+*.log
+.DS_Store
+native-host/build/
+verify-*.png

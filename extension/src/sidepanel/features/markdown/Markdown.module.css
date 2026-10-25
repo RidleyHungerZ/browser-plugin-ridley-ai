@@ -1,0 +1,147 @@
+.md {
+  font-size: var(--rds-font-size);
+  line-height: var(--rds-line-height);
+  color: var(--rds-text);
+  overflow-wrap: anywhere;
+}
+
+.md > *:first-child {
+  margin-top: 0;
+}
+.md > *:last-child {
+  margin-bottom: 0;
+}
+
+.md p {
+  margin: 0 0 12px;
+}
+.md p:last-child {
+  margin-bottom: 0;
+}
+
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md h6 {
+  margin: 20px 0 10px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.md h1 {
+  font-size: 20px;
+}
+.md h2 {
+  font-size: 17px;
+}
+.md h3 {
+  font-size: 15px;
+}
+.md h4,
+.md h5,
+.md h6 {
+  font-size: 14px;
+}
+
+.md ul,
+.md ol {
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+.md li {
+  margin: 2px 0;
+}
+.md li > p {
+  margin: 0;
+}
+.md li::marker {
+  color: var(--rds-text-3);
+}
+
+.md blockquote {
+  margin: 0 0 12px;
+  padding: 2px 0 2px 12px;
+  border-left: 3px solid var(--rds-border-strong);
+  color: var(--rds-text-2);
+}
+
+.md hr {
+  margin: 18px 0;
+  border: none;
+  border-top: 1px solid var(--rds-border);
+}
+
+.md a {
+  color: var(--rds-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.md strong {
+  font-weight: 600;
+}
+
+.inlineCode {
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--rds-code-bg);
+  box-shadow: inset 0 0 0 0.5px var(--rds-code-border);
+  font-family: var(--rds-font-code);
+  font-size: 0.9em;
+  word-break: break-word;
+}
+
+.md :global(.katex-display) {
+  margin: 12px 0;
+  padding: 4px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.md :global(.katex-error) {
+  color: var(--rds-danger);
+  font-family: var(--rds-font-code);
+  font-size: 0.9em;
+}
+
+.tableWrap {
+  margin: 0 0 12px;
+  overflow-x: auto;
+  border-radius: var(--rds-radius-sm);
+}
+
+.tableWrap table {
+  border-collapse: collapse;
+  min-width: 100%;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 6px 10px;
+  border: 1px solid var(--rds-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tableWrap th {
+  background: var(--rds-bg-subtle);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tableWrap tr:nth-child(even) td {
+  background: var(--rds-bg-subtle);
+}
+
+.md img {
+  border-radius: var(--rds-radius-sm);
+  margin: 6px 0;
+}
+
+.md > pre {
+  margin: 0;
+}

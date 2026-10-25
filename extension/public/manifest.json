@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Ridley-AI",
+  "version": "0.1.0",
+  "description": "个人用 AI 侧边栏助手：选中文字右键询问，记录保存在 ~/.ridley-ai",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApqdtNsLSy7oCG/0jUb8DTZ9QL6wEX3Jgct0yBzKx0m4AEjquxj99q9iM0oeKpwt6259a5v88z98C5JrVChGHEOl1Ltf7aQX9X+FnONq31p9kFnieqm0XuGFVGvvrJzzjBlARFvYlhc4tPhalARXord2BgR8Ui34j4z7tL1vjTBrIc4lVQeGVY5vrFcZk06iw2MeVi1L/mZmipcXFg6Fsh9mxNEr0qt7dWxBYlFl9ui43wvUfn9hf/L9yJXAeznTfvr5+A+OBuXJ2l4eX5qCLYQMGUcOjjMUN4hoFMJ9JfFCwLL0ehGu5hbEhIevWrgKDQt9KpK/IwPsQdfiGtTQgMQIDAQAB",
+  "permissions": [
+    "sidePanel",
+    "contextMenus",
+    "storage",
+    "nativeMessaging",
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Ridley-AI",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
