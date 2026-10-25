@@ -1016,12 +1016,12 @@ export function SettingsModal() {
           <div className={styles.group}>
             <div className={styles.groupTitle}>调用策略</div>
             <label className={styles.field} style={{ maxWidth: 260 }}>
-              <span className={styles.label}>单次提问最多执行几轮工具（1–10）</span>
+              <span className={styles.label}>工具调用轮次上限（0 = 不限制，最大 50）</span>
               <input
                 className={styles.input}
                 type="number"
-                min={1}
-                max={10}
+                min={0}
+                max={50}
                 value={draft.tools.maxRounds ?? 5}
                 onChange={(event) => updateTools({ maxRounds: Number(event.target.value) })}
               />
@@ -1029,6 +1029,7 @@ export function SettingsModal() {
             <div className={styles.hint}>
               达到上限后不会中断会话：剩下的工具调用会收到「已到上限」的结果，
               随后再发一次不带工具的请求，让模型基于已有信息给出最终回答。
+              填 0 表示不限制轮次（内部仍保留 100 轮作为防死循环的保险）。
             </div>
           </div>
 

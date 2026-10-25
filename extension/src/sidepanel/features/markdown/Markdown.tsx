@@ -5,6 +5,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 import { CodeBlock } from './CodeBlock'
+import { MermaidBlock } from './MermaidBlock'
 import styles from './Markdown.module.css'
 
 interface MarkdownProps {
@@ -23,6 +24,10 @@ export const Markdown = memo(function Markdown({ text, streaming = false }: Mark
           code: ({ className, children }) => {
             const match = /language-([\w+#.-]+)/.exec(className ?? '')
             const raw = String(children ?? '')
+            const lang = match?.[1]?.toLowerCase()
+            if (lang === 'mermaid') {
+              return <MermaidBlock code={raw.replace(/\n$/, '')} streaming={streaming} />
+            }
             if (match) {
               return (
                 <CodeBlock code={raw.replace(/\n$/, '')} lang={match[1]} streaming={streaming} />

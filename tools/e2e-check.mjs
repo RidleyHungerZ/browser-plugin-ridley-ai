@@ -217,6 +217,10 @@ try {
   check('工具调用卡片渲染', after.includes('网页搜索') && after.includes('抓取网页'))
   check('工具结果已回填', after.includes('工具返回了 2 条结果'))
   check('生成状态已清除', !after.includes('正在生成') && !after.includes('正在执行'))
+  await page.waitForTimeout(1800)
+  const mermaidSvg = await page.locator('[class*="diagram"] svg').count()
+  const mermaidError = after.includes('Mermaid 渲染失败')
+  check('Mermaid 图表已渲染', mermaidSvg > 0 && !mermaidError, `svg=${mermaidSvg} error=${mermaidError}`)
   await page.screenshot({ path: join(root, 'verify-chat.png') })
 
   // 悬停复制按钮 + 复制 Markdown 原文
@@ -241,6 +245,15 @@ try {
     clipboard.includes('### 能力演示') && clipboard.includes('```js'),
     clipboard.slice(0, 60).replace(/\n/g, ' '),
   )
+
+  // 输入框换行：Shift+Enter
+  const textarea = page.locator('textarea')
+  await textarea.fill('第一行')
+  await textarea.press('Shift+Enter')
+  await textarea.type('第二行')
+  const multiline = await textarea.inputValue()
+  check('Shift+Enter 可换行且不发送', multiline.includes('\n') && multiline.includes('第二行'), JSON.stringify(multiline))
+  await textarea.fill('')
 
   // 工具轮次上限：达到后应回填错误并让模型收尾，而不是直接中断
   await page.locator('textarea').fill('KEEP_TOOLING 验证工具上限')

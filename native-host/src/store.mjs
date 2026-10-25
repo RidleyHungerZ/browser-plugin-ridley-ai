@@ -156,7 +156,7 @@ export class Store {
             search: { ...DEFAULT_SETTINGS.tools.search, ...(parsed.tools?.search ?? {}) },
             fetch: { ...DEFAULT_SETTINGS.tools.fetch, ...(parsed.tools?.fetch ?? {}) },
             maxRounds:
-              Number.isFinite(parsed.tools?.maxRounds) && parsed.tools.maxRounds > 0
+              Number.isFinite(parsed.tools?.maxRounds) && parsed.tools.maxRounds >= 0
                 ? parsed.tools.maxRounds
                 : DEFAULT_SETTINGS.tools.maxRounds,
           },

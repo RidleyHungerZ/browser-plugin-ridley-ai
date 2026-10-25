@@ -490,10 +490,12 @@ async function runGeneration(
   const settings = getState().settings
   const toolDefs = settings ? buildToolDefinitions(settings.tools) : []
   const activeTools = model.tools === false ? [] : toolDefs
-  const maxToolRounds = Math.min(
-    10,
-    Math.max(1, Math.round(settings?.tools.maxRounds ?? DEFAULT_MAX_TOOL_ROUNDS)),
-  )
+  const configuredRounds = settings?.tools.maxRounds ?? DEFAULT_MAX_TOOL_ROUNDS
+  // 0 表示不限制；仍保留 100 轮作为防死循环的保险
+  const maxToolRounds =
+    configuredRounds <= 0
+      ? 100
+      : Math.min(50, Math.max(1, Math.round(configuredRounds)))
   const conversation: StoredMessage[] = [...getState().messages]
 
   let rounds = 0

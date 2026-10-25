@@ -1,0 +1,50 @@
+.diagram {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-radius: var(--rds-radius-md);
+  background: var(--rds-code-bg);
+  box-shadow: inset 0 0 0 0.5px var(--rds-code-border);
+  overflow-x: auto;
+}
+
+.diagram :global(svg) {
+  max-width: 100%;
+  height: auto;
+}
+
+.loading {
+  padding: 18px;
+  text-align: center;
+  border-radius: var(--rds-radius-md);
+  background: var(--rds-code-bg);
+  box-shadow: inset 0 0 0 0.5px var(--rds-code-border);
+  color: var(--rds-text-3);
+  font-size: 12px;
+}
+
+.errorBox {
+  padding: 10px 12px;
+  border-radius: var(--rds-radius-md);
+  background: var(--rds-danger-weak);
+}
+
+.errorText {
+  color: var(--rds-danger);
+  font-size: 11.5px;
+  line-height: 17px;
+  word-break: break-word;
+}
+
+.fallback {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-radius: var(--rds-radius-sm);
+  background: var(--rds-code-bg);
+  color: var(--rds-text-2);
+  font-family: var(--rds-font-code);
+  font-size: 11.5px;
+  line-height: 18px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}

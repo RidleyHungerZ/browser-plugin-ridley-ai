@@ -14,6 +14,7 @@ const REPLY = [
   '2. 支持代码高亮\n',
   '3. 支持数学公式 $E = mc^2$\n\n',
   '```js\nfunction greet(name) {\n  return `你好，${name}`\n}\nconsole.log(greet("Ridley"))\n```\n\n',
+  '```mermaid\ngraph TD\n  A[用户] --> B[侧边栏]\n  B --> C[模型]\n```\n\n',
   '| 项目 | 状态 |\n| --- | --- |\n| 流式 | 正常 |\n| 历史 | 正常 |\n\n',
   '以上就是全部内容。',
 ]
